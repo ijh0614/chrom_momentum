@@ -7,8 +7,8 @@ function handleLoginBtnClick(){
     if(value === ""){
         console.log("please input your name");
     } 
-    else if(value.length < 10) {
-        console.log(value.length);
+    else if(value.length > 20) {
+        console.log("name is too long");
     }
 }
 
