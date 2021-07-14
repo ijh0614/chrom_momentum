@@ -1,15 +1,13 @@
 const loginForm = document.querySelector(".login-form");
-const loginInput = loginForm.querySelector("input");
-const loginButton = loginForm.querySelector("button");
+const loginInput = document.querySelector(".login-form input");
+const greeting = document.querySelector("#greeting");
 
-function handleLoginBtnClick(){
-    const value = loginInput.value;
-    if(value === ""){
-        console.log("please input your name");
-    } 
-    else if(value.length > 20) {
-        console.log("name is too long");
-    }
+function onSubmit(event){
+    event.preventDefault();
+    const username = loginInput.value;
+    loginForm.classList.add("hidden");
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove("hidden");
 }
 
-loginButton.addEventListener("click", handleLoginBtnClick);
+loginForm.addEventListener("submit",onSubmit);
